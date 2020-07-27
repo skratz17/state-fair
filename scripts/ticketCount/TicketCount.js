@@ -3,18 +3,16 @@ const contentTarget = document.querySelector('.customers');
 
 let ticketCount = 0;
 
-const incrementAndRender = amount => {
-  return () => {
-    ticketCount += amount;
-    render(ticketCount);
-  }
+const incrementAndRender = () => {
+  ticketCount += 1;
+  render(ticketCount);
 };
 
-eventHub.addEventListener('rideTicketPurchased', incrementAndRender(1));
-eventHub.addEventListener('foodTicketPurchased', incrementAndRender(1));
-eventHub.addEventListener('gameTicketPurchased', incrementAndRender(1));
-eventHub.addEventListener('sideshowTicketPurchased', incrementAndRender(1));
-eventHub.addEventListener('fullPackageTicketPurchased', incrementAndRender(4));
+eventHub.addEventListener('rideTicketPurchased', incrementAndRender);
+eventHub.addEventListener('foodTicketPurchased', incrementAndRender);
+eventHub.addEventListener('gameTicketPurchased', incrementAndRender);
+eventHub.addEventListener('sideshowTicketPurchased', incrementAndRender);
+eventHub.addEventListener('fullPackageTicketPurchased', incrementAndRender);
 
 const render = ticketCount => {
   contentTarget.innerHTML = `<p>Total tickets purchased: ${ticketCount}</p>`
