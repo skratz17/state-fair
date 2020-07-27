@@ -20,6 +20,8 @@ eventHub.addEventListener('click', event => {
         case 'fullPackageTicket':
             customEvent = new CustomEvent('fullPackageTicketPurchased');
             break;
+        default: 
+            return;
     }
 
     eventHub.dispatchEvent(customEvent);
