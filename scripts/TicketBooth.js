@@ -12,7 +12,10 @@ eventHub.addEventListener('click', event => {
             customEvent = new CustomEvent('foodTicketPurchased');
             break;
         case 'gameTicket':
-            customEvent = new CustomEvent('gameTicketPurchased');;
+            customEvent = new CustomEvent('gameTicketPurchased');
+            break;
+        case 'sideshowTicket':
+            customEvent = new CustomEvent('sideshowTicketPurchased');
             break;
     }
 
@@ -25,6 +28,7 @@ export const TicketBooth = () => {
             <button id="rideTicket">Ride Ticket</button>
             <button id="foodTicket">Food Ticket</button>
             <button id="gameTicket">Game Ticket</button>
+            <button id="sideshowTicket">Sideshow Ticket</button>
         </div>
     `
 }
