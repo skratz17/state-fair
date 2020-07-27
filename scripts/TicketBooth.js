@@ -2,21 +2,21 @@ const contentTarget = document.querySelector(".entry")
 const eventHub = document.querySelector("#state-fair")
 
 eventHub.addEventListener('click', event => {
-    const type = event.target.id;
+    let customEvent;
 
-    let customEventType;
-    const customEventBody = { detail: { type } };
-
-    switch(type) {
+    switch(event.target.id) {
         case 'rideTicket':
-            customEventType = new CustomEvent('rideTicketPurchased', customEventBody);
+            customEvent = new CustomEvent('rideTicketPurchased');
             break;
         case 'foodTicket':
-            customEventType = new CustomEvent('foodTicketPurchased', customEventBody);
+            customEvent = new CustomEvent('foodTicketPurchased');
+            break;
+        case 'gameTicket':
+            customEvent = new CustomEvent('gameTicketPurchased');;
             break;
     }
 
-    eventHub.dispatchEvent(customEventType);
+    eventHub.dispatchEvent(customEvent);
 });
 
 export const TicketBooth = () => {
@@ -24,6 +24,7 @@ export const TicketBooth = () => {
         <div class="ticketBooth">
             <button id="rideTicket">Ride Ticket</button>
             <button id="foodTicket">Food Ticket</button>
+            <button id="gameTicket">Game Ticket</button>
         </div>
     `
 }
