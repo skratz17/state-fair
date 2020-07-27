@@ -5,5 +5,9 @@ eventHub.addEventListener('rideTicketPurchased', () => {
     contentTarget.innerHTML += `<div class="person rider"></div>`;
 });
 
+eventHub.addEventListener('fullPackageTicketPurchased', () => {
+    contentTarget.innerHTML += '<div class="person bigSpender"></div>'
+});
+
 export const RideTicketHolders = () => {
 };
