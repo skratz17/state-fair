@@ -1,5 +1,5 @@
-const contentTarget = document.querySelector(".entry")
-const eventHub = document.querySelector("#state-fair")
+const contentTarget = document.querySelector(".entry");
+const eventHub = document.querySelector("#state-fair");
 
 eventHub.addEventListener('click', event => {
     let customEvent;
@@ -36,6 +36,6 @@ export const TicketBooth = () => {
             <button id="sideshowTicket">Sideshow Ticket</button>
             <button id="fullPackageTicket">Full Package Ticket</button>
         </div>
-    `
-}
+    `;
+};
 
